@@ -39,8 +39,11 @@ public class App {
         //연산에 필요한 두번째 숫자 받기
         System.out.print("두 번째 숫자를 입력하세요: ");
         int num2 = sc.nextInt();
-
-
+        //결과값이 10개 이상일때 1~9인덱스의 값을 0~8번 인덱스로 옮김
+        if (count >=10) {
+            for (int i = 1; i < 10; i++)  resultArray[i-1] = resultArray[i];
+            count=9;
+        }
         //연산하고 결과 출력
         int result;
         switch (operator) {
