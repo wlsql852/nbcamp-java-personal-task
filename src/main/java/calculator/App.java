@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
+        /* 적합한 컬렉션 타입의 변수 선언 */
         ArrayList<Integer> resultArray =  new ArrayList<>();
         calculate(resultArray);
         Scanner sc = new Scanner(System.in);
@@ -11,11 +12,22 @@ public class App {
         String stop = "continue";
         while (stop.equals("continue")) {
             /* 배열에서 컬렉션으로 변경됨으로써 변경해야하는 부분 구현 */
-            System.out.println("가장 먼저 저장된 연산 결과를 삭제하시겠습니까? (remove 입력 시 삭제)");
+            System.out.println("가장 먼저 저장된 연산 결과를 삭제하시겠습니까? (remove 입력 시 삭제, 다른 글자 입력시 유지)");
             String remove = sc.next();
-            if(remove.equals("remove")) {
-                resultArray.remove(0);
+            //remove를 입력하면 첫번째 값 지워짐
+            if(remove.equals("remove")) resultArray.remove(0);
+            
+            //"inquiry 입력시 저장된 연산 결과 전부 출력
+            System.out.println("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회, 다른 글자 입력시 넘어감)");
+            String show = sc.next();
+            if (show.equals("inquiry")) {
+                    System.out.print("최근 연산 결과 : ");
+                for (int num : resultArray) {
+                    System.out.print(num +" ");
+                }
+                System.out.println();
             }
+            
             System.out.println("더 계산하시겠습니까? (맞으면 continue, 종료를 원하면 exit 입력)");
             stop = sc.next();
             /* continue을 입력 받으면 반복 유지 */
