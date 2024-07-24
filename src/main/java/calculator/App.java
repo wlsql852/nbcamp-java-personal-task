@@ -3,7 +3,10 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
-        calculate();
+        int[] resultArray =  new int[10];
+        int count = 0;
+        calculate(resultArray,count);
+        count++;
         Scanner sc = new Scanner(System.in);
         /* 반복문 사용 해서 연산을 반복 */
         String stop = "continue";
@@ -12,7 +15,8 @@ public class App {
             stop = sc.next();
             /* continue을 입력 받으면 반복 유지 */
             if (stop.equals("continue")) {
-                calculate();
+                calculate(resultArray,count);
+                count++;
             /* exit을 입력 받으면 반복 종료 */
             } else if (stop.equals("exit")) {
                 System.out.println("계산기 종료");
@@ -24,7 +28,7 @@ public class App {
         }
     }
 
-    public static void calculate() {
+    public static void calculate(int[] resultArray, int count) {
         Scanner sc = new Scanner(System.in);
         //연산에 필요한 첫번째 숫자 받기
         System.out.print("첫 번째 숫자를 입력하세요: ");
@@ -43,27 +47,30 @@ public class App {
             case '+':
                 result = num1 + num2;
                 System.out.println("결과: " + result);
+                resultArray[count] = result;
                 break;
             case '-':
                 result = num1 - num2;
                 System.out.println("결과: " + result);
+                resultArray[count] = result;
                 break;
             case '*':
                 result = num1 * num2;
                 System.out.println("결과: " + result);
+                resultArray[count] = result;
                 break;
             case '/':
                 try {
                     result = num1 / num2;
                     System.out.println("결과: " + result);
+                    resultArray[count] = result;
                 } catch (ArithmeticException e) {
                     System.out.println("나눗셈 연산에서 분모(두번째 정수)에 0이 입력될 수 없습니다.");
                 }
                 break;
             default:
                 System.out.println("처음부터 다시 입력하세요");
-                calculate();
+                calculate(resultArray,count);
         }
-
     }
 }
