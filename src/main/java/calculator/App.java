@@ -1,8 +1,16 @@
 package calculator;
+import java.util.Scanner;
 
 public class App {
 
     public static void main(String[] args) {
-        System.out.println();
+        Scanner sc = new Scanner(System.in);
+
+        //연산에 필요한 두 숫자 받기
+        System.out.print("첫 번째 숫자를 입력하세요: ");
+        int num1 = sc.nextInt();
+        System.out.print("두 번째 숫자를 입력하세요: ");
+        int num02 = sc.nextInt();
+
     }
 }
