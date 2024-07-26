@@ -46,4 +46,10 @@ public class Calculator {
         }
         return result;
     }
+    //가장 첫번째 연산 결과를 삭제하는 함수
+    public void removeResult() {
+        resultArray.remove(0);
+        System.out.println("삭제되었습니다.");
+        System.out.println("이전 검색 결과 : "+resultArray.toString());
+    }
 }

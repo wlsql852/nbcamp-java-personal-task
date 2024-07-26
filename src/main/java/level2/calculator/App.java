@@ -23,7 +23,10 @@ public class App {
             //계산
             int result = cal.calculate(operator, num1, num2);
             System.out.println("결과 : " + result);
-            System.out.println("이전 검색 결과"+cal.getResultArray().toString());
+            System.out.println("이전 검색 결과 : "+cal.getResultArray().toString());
+            System.out.println("첫번째 결과기록을 삭제하시겠습니까? (remove 입력 시 삭제)");
+            String remove = sc.next();
+            if(remove.equals("remove")) cal.removeResult();
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
             stop = sc.next();  //exit이 아니면 어떤 값이든 반복재생
         }
