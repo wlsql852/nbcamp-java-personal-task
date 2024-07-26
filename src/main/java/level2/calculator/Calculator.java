@@ -3,7 +3,19 @@ package level2.calculator;
 import java.util.ArrayList;
 
 public class Calculator {
-    ArrayList<Integer> resultArray = new ArrayList<>();
+    ArrayList<Integer> resultArray;
+    public Calculator() {}
+
+    /* Getter 메서드 구현 */
+    public ArrayList<Integer> getResultArray () {
+        return resultArray;
+    }
+
+    public void setResultArray(ArrayList<Integer> Array) {
+        this.resultArray = Array;
+    }
+
+    /* Setter 메서드 구현 */
     public int calculate(char operator, int num1, int num2) {
         int result=0;
         switch (operator) {
