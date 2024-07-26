@@ -52,4 +52,9 @@ public class Calculator {
         System.out.println("삭제되었습니다.");
         System.out.println("이전 검색 결과 : "+resultArray.toString());
     }
+
+    //저장된 연산 결과들을 조회하는 기능을 가진 메서드
+    public void inquiryResults() {
+        System.out.println("이전 검색 결과 : "+resultArray.toString());
+    }
 }
