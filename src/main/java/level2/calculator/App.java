@@ -7,7 +7,7 @@ public class App {
     public static void main(String[] args) {
         /* Calculator 인스턴스 생성 */
         Calculator cal = new Calculator();
-        cal.setResultArray(new ArrayList<Integer>());
+        //cal.setResultArray(new ArrayList<Integer>());
         Scanner sc = new Scanner(System.in);
 
         /* 반복문 시작 */

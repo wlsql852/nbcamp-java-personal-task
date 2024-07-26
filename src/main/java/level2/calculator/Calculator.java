@@ -4,7 +4,9 @@ import java.util.ArrayList;
 
 public class Calculator {
     ArrayList<Integer> resultArray;
-    public Calculator() {}
+    public Calculator() {
+        resultArray = new ArrayList<>();
+    }
 
     /* Getter 메서드 구현 */
     public ArrayList<Integer> getResultArray () {
