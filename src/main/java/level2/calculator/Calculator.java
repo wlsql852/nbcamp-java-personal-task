@@ -3,9 +3,9 @@ package level2.calculator;
 import java.util.ArrayList;
 
 public class Calculator {
-    ArrayList<Integer> resultArray;
-    public int calculate(ArrayList<Integer> resultArray,char operator, int num1, int num2) {
-        int result;
+    ArrayList<Integer> resultArray = new ArrayList<>();
+    public int calculate(char operator, int num1, int num2) {
+        int result=0;
         switch (operator) {
             case '+':
                 result = num1 + num2;
