@@ -2,6 +2,11 @@ package level2.calculator;
 
 public class ArithmeticCalculator extends Calculator{
 
+    AddOperator addOperator = new AddOperator();
+    SubtractOperator subtractOperator = new SubtractOperator();
+    MultiplyOperator multiplyOperator = new MultiplyOperator();
+    DivideOperator divideOperator = new DivideOperator();
+
     public ArithmeticCalculator () {
         super();
     }
@@ -10,23 +15,23 @@ public class ArithmeticCalculator extends Calculator{
         double result=0;
         switch (operator) {
             case '+':
-                result = num1 + num2;
+                result = addOperator.operate(num1, num2);
                 //System.out.println("결과: " + result);
                 super.resultArray.add(result);
                 break;
             case '-':
-                result = num1 - num2;
+                result = subtractOperator.operate(num1, num2);
                 //System.out.println("결과: " + result);
                 super.resultArray.add(result);
                 break;
             case '*':
-                result = num1 * num2;
+                result = multiplyOperator.operate(num1, num2);
                 //System.out.println("결과: " + result);
                 super.resultArray.add(result);
                 break;
             case '/':
                 try {
-                    result = num1 / num2;
+                    result = divideOperator.operate(num1, num2);
                     //System.out.println("결과: " + result);
                     super.resultArray.add(result);
                 } catch (ArithmeticException e) {
